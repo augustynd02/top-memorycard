@@ -1,3 +1,20 @@
+import '../styles/Cards.css'
+
 export default function Cards() {
-    return;
+    return (
+        <div className="cards">
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+            <div className="card"></div>
+        </div>
+    )
 }

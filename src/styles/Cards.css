@@ -1,0 +1,12 @@
+.cards {
+    flex-grow: 1;
+    display: grid;
+    padding: 2em;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2em;
+}
+
+.card {
+    border: 1px dashed red;
+}

@@ -1,0 +1,15 @@
+:root {
+    --color-primary: rgb(30, 30, 30);
+}
+
+body {
+    margin: 0px;
+    background-color: var(--color-primary);
+    min-height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

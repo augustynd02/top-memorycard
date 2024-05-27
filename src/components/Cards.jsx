@@ -1,20 +1,22 @@
 import '../styles/Cards.css'
 
-export default function Cards() {
+function createCards(imagesData) {
+    const cards = [];
+    imagesData.forEach(data => {
+        cards.push(
+            <div className="card" key={data.id}>
+                <img src={data.URL} alt=""/>
+            </div>
+        )
+    })
+    return cards;
+}
+
+export default function Cards({imagesData}) {
+    const cards = createCards(imagesData)
     return (
         <div className="cards">
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
+            {cards}
         </div>
     )
 }

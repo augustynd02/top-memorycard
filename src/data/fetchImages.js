@@ -7,7 +7,7 @@ export default async function fetchImages() {
     data.hits.forEach(hit => {
         images.push({
             id: hit.id,
-            link: hit.largeImageURL
+            URL: hit.largeImageURL
         })
     })
     return images;

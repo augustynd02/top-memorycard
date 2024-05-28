@@ -5,15 +5,35 @@ import { useState, useEffect } from 'react';
 import fetchImages from '../data/fetchImages.js';
 import '../styles/Game.css'
 
+function wasClicked(card) {
+    return card.clicked;
+}
+
+
 export default function Game() {
-    const [imagesData, setImagesData] = useState([]);
+    const [data, setData] = useState([]);
     const [score, setScore] = useState(0);
     const [highscore, setHighscore] = useState(0);
+
+    function handleClick(card) {
+        if(card.clicked) {
+            console.log("game over");
+            return;
+        }
+        console.log("clicked");
+        const newData = data;
+        newData.map(element => {
+            if(element.id === card.id) {
+                element.clicked = true;
+            }
+        })
+        setData(newData)
+    }
 
     useEffect(() => {
         const getImages = async () => {
             const images = await fetchImages();
-            setImagesData(images);
+            setData(images);
         }
         getImages();
     }, [])
@@ -21,7 +41,7 @@ export default function Game() {
     return (
         <div className="game-container">
             <Scoreboard score={score} highscore={highscore}/>
-            <Cards imagesData={imagesData}></Cards>
+            <Cards imagesData={data} handleClick={handleClick}></Cards>
         </div>
     )
 }

@@ -11,18 +11,26 @@ export default function Game() {
     const [score, setScore] = useState(0);
     const [highscore, setHighscore] = useState(0);
 
+    function resetGame() {
+        const dataCopy = data;
+        dataCopy.map(data => data.clicked = false);
+    }
+
     function handleClick(card) {
         if(card.clicked) {
-            console.log("game over");
+            setScore(0);
+            resetGame();
             return;
         }
-        console.log("clicked");
+
         const newData = data;
         newData.map(element => {
             if(element.id === card.id) {
                 element.clicked = true;
             }
         })
+        if(highscore <= score) setHighscore(score + 1);
+        setScore(score + 1);
         setData(newData)
     }
 

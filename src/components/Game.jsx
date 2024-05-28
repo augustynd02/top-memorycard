@@ -5,10 +5,6 @@ import { useState, useEffect } from 'react';
 import fetchImages from '../data/fetchImages.js';
 import '../styles/Game.css'
 
-function wasClicked(card) {
-    return card.clicked;
-}
-
 
 export default function Game() {
     const [data, setData] = useState([]);

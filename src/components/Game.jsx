@@ -12,7 +12,7 @@ export default function Game() {
     const [highscore, setHighscore] = useState(0);
 
     function resetGame() {
-        const dataCopy = data;
+        const dataCopy = [...data];
         dataCopy.map(data => data.clicked = false);
     }
 
@@ -23,7 +23,7 @@ export default function Game() {
             return;
         }
 
-        const newData = data;
+        const newData = [...data];
         newData.map(element => {
             if(element.id === card.id) {
                 element.clicked = true;

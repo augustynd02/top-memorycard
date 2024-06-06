@@ -8,10 +8,10 @@
 }
 
 .card {
-    border: 1px dashed red;
     position: relative;
     aspect-ratio: 2/3;
     cursor: pointer;
+    animation: appear 500ms forwards;
 }
 .card img {
     position: absolute;
@@ -20,4 +20,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@keyframes appear {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 0;
+    }
 }

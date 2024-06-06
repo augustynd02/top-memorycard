@@ -1,0 +1,28 @@
+.menu {
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.menu h2 {
+    font-size: 4em;
+    margin: 0px;
+    color: white;
+    font-family: Roboto;
+}
+.menu input {
+    background-color: rgb(77, 77, 77);
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+}
+.menu input:focus {
+    outline: none;
+}
+.menu button {
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+}
